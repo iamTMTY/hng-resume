@@ -1,13 +1,18 @@
 $big-tablet: 1000px;
 $small-tablet: 700px;
 $mobile: 550px;
+$small-mobile: 300px;
 
 :root {
 	--bg-color: rgb(0, 8, 22);
+	// --bg-color: rgb(236, 236, 236);  //Dark Mode
 	--text-color: #fff;
+	// --text-color: #000;   // Dark Mode
 	--accent-color: rgb(253, 152, 0);
+	// --accent-color: rgb(197, 118, 0);   //Dark Mode
 	--secondary-color: rgb(98, 156, 255);
 	--tertiary-color: rgb(0, 21, 58);
+	// --tertiary-color: rgb(175, 204, 255);  //Dark Mode
 	--white: white;
 	--black: black;
 }
@@ -37,15 +42,35 @@ a {
 	text-decoration: underline;
 }
 
+// .ball_container {
+// 	position: fixed;
+// 	top: 1.5rem;
+// 	right: 2rem;
+// 	border: 2px solid red;
+// 	width: 2.5rem;
+// 	height: 1.2rem;
+// 	border-radius: 500px;
+// }
+
+// .ball {
+// 	position: absolute;
+// 	left: 0;
+// 	top: 0;
+// 	width: calc(1.2rem - 4px);
+// 	height: calc(1.2rem - 4px);
+// 	border-radius: 50%;
+// 	background-color: var(--secondary-color);
+// }
+
 .resume_content {
 	padding: 0 2rem;
 
-	@media only screen and (max-width: $small-tablet) {
+	@media only screen and (max-width: $small-mobile) {
 		padding: 0 1rem;
 	}
 }
 
-article {
+article:not(.intro) {
 	margin-bottom: 100px;
 }
 
@@ -66,7 +91,7 @@ header {
 }
 
 .intro {
-	min-height: 90vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -76,10 +101,11 @@ header {
 	p {
 		margin-bottom: 20px;
 		font-size: 1rem;
+		// font-weight: lighter;
 	}
 
 	.slant-text {
-		font-size: 0.8rem;
+		// font-size: 0.8rem;
 		font-style: italic;
 		opacity: 0;
 		animation: animate_opacity 2s ease 2.1s 1 normal forwards;
@@ -102,8 +128,14 @@ header {
 	text-transform: capitalize;
 	font-size: 3em;
 	line-height: 1em;
-	color: var(--secondary-color);
+	// color: var(--secondary-color);
 	font-weight: bold;
+	background: linear-gradient(to right, rgb(98, 156, 255), rgb(255, 116, 116), rgb(1, 255, 255));
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-size: 200% 200%;
+	animation: move_gradient 5s ease-in-out infinite alternate;
 	// font-family: "Roboto Mono", monospace;
 	@media only screen and (max-width: $big-tablet) {
 		font-size: 2.5em;
@@ -250,5 +282,15 @@ footer {
 
 	to {
 		transform: translateX(0);
+	}
+}
+
+@keyframes move_gradient {
+	0% {
+		background-position: 10% 200%;
+	}
+
+	100% {
+		background-position: 90% 200%;
 	}
 }
