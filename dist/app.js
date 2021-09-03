@@ -1,12 +1,8 @@
-const nameElement = document.querySelector(".name");
 const ballContainer = document.querySelector(".ball_container");
 const ball = document.querySelector(".ball");
+const year = document.querySelector("#year");
 
-const displayName = (firstName, lastName) => {
-	nameElement.textContent = `${firstName} ${lastName}.`;
-};
-
-displayName("Temitayo", "Salaudeen");
+year.textContent = new Date().getFullYear();
 
 // ballContainer.addEventListener("click", toggleTheme);
 // // ball.addEventListener("click", toggleTheme)
