@@ -1,0 +1,107 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+	--bg-color: rgb(0, 8, 22);
+	--text-color: #fff;
+	--accent-color: rgb(253, 152, 0);
+	--secondary-color: rgb(98, 156, 255);
+	--tertiary-color: rgb(0, 21, 58);
+	--white: white;
+	--black: black;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-size: 1.2rem;
+}
+
+a {
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: var(--accent-color);
+	text-decoration: underline;
+}
+
+.name,
+.role {
+	text-transform: capitalize;
+	font-size: 3em;
+	line-height: 1em;
+	font-weight: bold;
+	background: linear-gradient(to right, rgb(98, 156, 255), rgb(255, 116, 116), rgb(1, 255, 255));
+	background-clip: text;
+	-webkit-background-clip: text;
+	/* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--bg-color); */
+	color: transparent;
+	background-size: 200% 200%;
+	animation: move_gradient 5s ease-in-out infinite alternate;
+}
+
+first_intro {
+	opacity: 0;
+	animation: animate_opacity 2s ease 0.5s 1 normal forwards;
+}
+.second_intro {
+	opacity: 0;
+	animation: animate_opacity 2s ease 1.3s 1 normal forwards;
+}
+
+@keyframes animate_opacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes move_gradient {
+	0% {
+		background-position: 10% 200%;
+	}
+
+	100% {
+		background-position: 90% 200%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+  .name, .role {
+		font-size: 2.5em;
+	}
+}
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: 1rem;
+	}
+	.name, .role {
+		font-size: 2em;
+	};
+}
+@media only screen and (max-width: 550px) {
+  .name, .role {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+  .name, .role {
+		font-size: 1.5em;
+	}
+}
