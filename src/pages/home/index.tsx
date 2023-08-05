@@ -12,19 +12,19 @@ export default function Home({}) {
   
   
   return (
-    <div className="flex flex-col h-screen min-h-[600px] overflow-x-hidden">
+    <div className="flex flex-col h-screen min-h-[600px] overflow-x-hidden overflow-y-auto py-6 gap-y-10 md:py-10">
       <div className="bg-primary h-3/6 flex flex-col items-center justify-center p-4">
         <motion.p 
           animate={{opacity: 1}} transition={{delay: 0.2}} initial={{opacity: animate ? 0 : 1}} exit={{opacity: 0}}
-          className="mb-5 text-center"><span className="hi">Hi</span>, my name is <motion.span layoutId='name' className="name">Temitayo Salaudeen</motion.span></motion.p>
+          className="mb-5 text-center text-sm md:text-base"><span className="hi">Hi</span>, my name is <motion.span layoutId='name' className="name">Temitayo Salaudeen</motion.span></motion.p>
         <motion.p 
           animate={{opacity: 1}} transition={{delay: 0.6}} initial={{opacity: animate ? 0 : 1}} exit={{opacity: 0}}
-          className="mb-5 text-center">I am a <span className="role">Software Developer,</span></motion.p>
+          className="mb-5 text-center text-sm md:text-base">I am a <span className="role">Software Developer,</span></motion.p>
         <motion.p 
           animate={{opacity: 1}} transition={{delay: 1.0}} initial={{opacity: animate ? 0 : 1}} exit={{opacity: 0}}
-          className="mb-5 text-center">and I love building intuitive and engaging internet experiences while solving business problems</motion.p>
+          className="mb-5 text-center text-sm md:text-base">and I love building intuitive and engaging internet experiences while solving business problems</motion.p>
       </div>
-      <div className='lg:flex grid grid-cols-2 gap-4 md:gap-10 mb-4 md:mb-10 h-3/6 px-4 md:px-10'>
+      <div className='lg:flex grid grid-cols-2 gap-4 md:gap-10 h-3/6 px-4 md:px-10'>
         {cards.map((card, i) => (
           <motion.div key={card} layoutId={card.toLocaleLowerCase()} layout onClick={() => {
             navigate("/" + card.toLocaleLowerCase())  
