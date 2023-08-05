@@ -12,7 +12,7 @@ export default function Home({}) {
   
   
   return (
-    <div className="flex flex-col h-[calc(100vh-40px)] min-h-[600px] overflow-x-hidden overflow-y-auto py-6 gap-y-10 md:py-10">
+    <div className="flex flex-col h-[calc(100vh-40px)] min-h-[600px] overflow-hidden py-6 gap-y-10 md:py-10">
       <div className="bg-primary h-3/6 flex flex-col items-center justify-center p-4">
         <motion.p 
           animate={{opacity: 1}} transition={{delay: 0.2}} initial={{opacity: animate ? 0 : 1}} exit={{opacity: 0}}
