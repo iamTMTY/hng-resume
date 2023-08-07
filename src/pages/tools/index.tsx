@@ -13,12 +13,12 @@ export default function Tools({}: Props) {
   return (
     <div className="px-4 sm:px-10 w-full flex flex-col items-center">
       <p className="text-base lg:text-xl mb-20 text-center">Here are some of the amazing tools I work with</p>
-      <div className="w-full grid grid-cols-2 min-[400px]:grid-cols-3 sm:grid-cols-4 gap-y-10 sm:gap-y-14 gap-x-4 sm:gap-x-10 max-w-[1400px]">
+      <div className="w-full grid grid-cols-2 min-[300px]:grid-cols-3 sm:grid-cols-4 gap-y-10 sm:gap-y-14 gap-x-4 sm:gap-x-10 max-w-[1400px]">
         {
           tools.map((tool, i) => {
             const {Icon, title} = tool
             return (
-              <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{delay: i*0.1}} className="flex flex-col justify-center items-center gap-2 w-full">
+              <motion.div key={tool.title} initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{delay: i*0.1}} className="flex flex-col justify-center items-center gap-2 w-full">
                 <Icon className="w-full" size={50} color='white' />
                 <p className='text-sm sm:text-base'>{title}</p>
               </motion.div>

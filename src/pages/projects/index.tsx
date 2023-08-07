@@ -19,9 +19,9 @@ export default function Projects({}: Props) {
           const hasImage = !!project?.image
           return (
             <motion.div key={project.name} animate={{ y: 0, opacity: 1}} initial={{y: 100, opacity: 0}} transition={{delay: j * 0.1}} exit={{y: 100, opacity: 0}} className="w-full h-[400px] shadow-card bg-primary  rounded-xl flex flex-col overflow-hidden group">
-              <div className={`w-full h-[60%] border-b-[1px] border-b-secondary ${hasImage ? "bg-[length:200%] group-hover:bg-[length:220%]" : "bg-[length:20%] group-hover:bg-[length:30%]"} transition-all duration-500 bg-center bg-no-repeat bg-blend-multiply bg-[#00000080]`} style={{backgroundImage: `url(${hasImage ? project.image : Project})`}}>
+              <div className={`w-full h-[60%] ${hasImage ? "bg-[length:200%] group-hover:bg-[length:220%]" : "bg-[length:20%] group-hover:bg-[length:30%]"} transition-all duration-500 bg-center bg-no-repeat bg-blend-multiply bg-[#00000080]`} style={{backgroundImage: `url(${hasImage ? project.image : Project})`}}>
               </div>
-              <div className="flex flex-col justify-between h-[40%] p-4">
+              <div className="flex flex-col justify-between h-[40%] bg-tertiary p-4">
                 <h2>{project.name.toLocaleUpperCase()}</h2>
                 <p className="text-sm">{project.description}</p>
                 <div className="flex justify-between items-center gap-2">

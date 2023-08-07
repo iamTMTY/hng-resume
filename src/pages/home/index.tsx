@@ -22,7 +22,7 @@ export default function Home({}) {
           className="mb-5 text-center text-sm md:text-base">I am a <span className="role">Software Developer,</span></motion.p>
         <motion.p 
           animate={{opacity: 1}} transition={{delay: 1.0}} initial={{opacity: animate ? 0 : 1}} exit={{opacity: 0}}
-          className="mb-5 text-center text-sm md:text-base">and I love building intuitive and engaging internet experiences while solving business problems</motion.p>
+          className="mb-5 text-center text-sm md:text-base">and I love building intuitive and engaging internet experiences</motion.p>
       </div>
       <div className='lg:flex grid grid-cols-2 gap-4 md:gap-10 h-3/6 px-4 md:px-10'>
         {cards.map((card, i) => (
